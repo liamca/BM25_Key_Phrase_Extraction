@@ -14,3 +14,8 @@ Using the [BM25 algorithm](https://en.wikipedia.org/wiki/Okapi_BM25), we can sca
 
 This project assumes that you have extracted your content into text files.  It is very likely your content will be in PDF's, Office or other document types.  There are numerous techniques for doing this including Apache Tika.  If you are interested in doing this using Azure Function, I have some [samples here](https://github.com/liamca/AzureSearch-AzureFunctions-CognitiveServices).
 
+## Language Support
+
+Currently, this processor supports English and Portuguese, however, you can cery easily add support for other languages by adding a new set of stop words for the language you are interested.  Kaggle, has a nice starting [set of stop words](https://www.kaggle.com/nltkdata/stopwords/data) for different languages.
+
+To do this, create a new class for this language as you [see here](https://github.com/liamca/BM25_Key_Phrase_Extraction/tree/master/ContentProcessor/StopWords) and then in the code where it refers to CustomStandardPortugueseAnalyzer, add a reference to this new stop word class you added.
