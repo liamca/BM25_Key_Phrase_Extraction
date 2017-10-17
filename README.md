@@ -19,3 +19,7 @@ This project assumes that you have extracted your content into text files.  It i
 Currently, this processor supports English and Portuguese, however, you can cery easily add support for other languages by adding a new set of stop words for the language you are interested.  Kaggle, has a nice starting [set of stop words](https://www.kaggle.com/nltkdata/stopwords/data) for different languages.
 
 To do this, create a new class for this language as you [see here](https://github.com/liamca/BM25_Key_Phrase_Extraction/tree/master/ContentProcessor/StopWords) and then in the code where it refers to CustomStandardPortugueseAnalyzer, add a reference to this new stop word class you added.
+
+## Performance and Scale
+
+This processing is done purely on a single machine.  It has done really well for 100's of thousands of files and even millions of smaller documents (1-2KB), but if your content is larger, you will want to look at how to parallelize this using something like Spark or Azure Data Lake Analytics.
